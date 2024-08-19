@@ -27,7 +27,9 @@ Firefox会阻止未经 Mozilla 数字签署和验证的第三方附加组件
 
 如何将chrome扩展插件转为firefox插件?
 
-两种插件结构差不多,简单的插件只需要将chrome的manifest.json文件，添加如下代码：
+前提是两种浏览器支持的插件的manifest.json文件版本要一样都是  "manifest_version": 2,或者都是"manifest_version": 3,即便是相同的浏览器,都是chrome或者都是firefox,只要插件版本不同就无法保证会正常运行.
+
+版本相同前提下,两种插件结构差不多,简单的插件只需要将chrome的manifest.json文件，添加如下代码：
 
 "applications": { "gecko": { "id": "X@Y" } },
 
