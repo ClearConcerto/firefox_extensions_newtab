@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "New Tab URL",
+  "version": "1.0",
+"applications": { "gecko": { "id": "newtable@cksongjia" } },
+
+  "description": "Opens a specified URL when a new tab is opened.",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  }
+
+}
