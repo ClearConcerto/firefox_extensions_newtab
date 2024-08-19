@@ -1,1 +1,26 @@
 # firefox_extensions_newtab
+
+主要目的,学习验证自编插件以及如何在firefox中安装数字签署和验证的第三方附加组件
+
+Firefox会阻止未经 Mozilla 数字签署和验证的第三方附加组件
+
+第一步:about:config
+
+第二步:xpinstall.signatures.required 改为false
+
+第三步:打开自己扩展中的manifest.json文件，添加如下代码：
+
+"applications": { "gecko": { "id": "X@Y" } },
+
+其中X和Y自己随便改成别的字符串。  重新加载插件，成功安装。
+
+
+这个 "applications": { "gecko": { "id": "x@y" } }, 部分是 Firefox 插件特有的配置,用于指定插件的唯一标识符(ID)。
+
+解释如下:
+
+"applications": 这个键是用来定义 Firefox 特有的配置项的。
+
+"gecko": 这个键表示这些配置项是针对 Gecko 引擎(Firefox 使用的渲染引擎)的。
+
+"id": "x@y": 这个就是插件的唯一标识符。这个 ID 必须是唯一的,通常使用逆域名的形式来命名,如 "com.example.myplugin"。
