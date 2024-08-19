@@ -24,3 +24,12 @@ Firefox会阻止未经 Mozilla 数字签署和验证的第三方附加组件
 "gecko": 这个键表示这些配置项是针对 Gecko 引擎(Firefox 使用的渲染引擎)的。
 
 "id": "x@y": 这个就是插件的唯一标识符。这个 ID 必须是唯一的,通常使用逆域名的形式来命名,如 "com.example.myplugin"。
+
+如何将chrome扩展插件转为firefox插件?
+
+两种插件结构差不多,简单的插件只需要将chrome的manifest.json文件，添加如下代码：
+
+"applications": { "gecko": { "id": "X@Y" } },
+
+然后将chrome插件文件夹里面的,所有文件,打包成zip文件,这个zip文件可以在firefox安装使用.
+
